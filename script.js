@@ -16,7 +16,7 @@ $(document).ready(function () {
   //call to track the current date and time
   function hourUpdater() {
     var currentHour = moment().hours();
-    $('time-block').each(function() {
+    $('.time-block').each(function() {
       var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
       if (blockHour < currentHour) {
