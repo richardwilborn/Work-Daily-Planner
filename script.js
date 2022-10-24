@@ -4,6 +4,12 @@ $(document).ready(function () {
     var time =(this).parent().attr('id');
     //save to local storage
     localStorage.setItem(time, value);
+    //'show' notification that an item was saved to local storage
+    $('.notification').addClass('show');
+
+    //removes 'show' after 3 seconds
+    setTimeout(function () {
+      $('.notification').removeClass('show');}, 3000);
   });
 
   //call to track the current date and time
