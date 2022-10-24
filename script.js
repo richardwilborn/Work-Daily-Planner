@@ -15,6 +15,19 @@ $(document).ready(function () {
   //interval every 10 seconds to check to see if current time needs to be updated 
   var interval = setInterval(hourUpdater, 10000);
 
+  //load saved data from localStorage into each hour in HTML
+  $('#hour-6 .description').val(localStorage.getItem('hour-6'));
+  $('#hour-7 .description').val(localStorage.getItem('hour-7'));
+  $('#hour-8 .description').val(localStorage.getItem('hour-8'));
+  $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+  $('#hour-10 .description').val(localStorage.getItem('hour-10'));
+  $('#hour-11 .description').val(localStorage.getItem('hour-11'));
+  $('#hour-12 .description').val(localStorage.getItem('hour-12'));
+  $('#hour-13 .description').val(localStorage.getItem('hour-13'));
+  $('#hour-14 .description').val(localStorage.getItem('hour-14'));
+  $('#hour-15 .description').val(localStorage.getItem('hour-15'));
+  $('#hour-16 .description').val(localStorage.getItem('hour-16'));
+  $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
 //current day is displayed at the top of the calendar
   $('#currentDay').text(moment().format('dddd, MMMM Do'));
