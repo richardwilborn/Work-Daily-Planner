@@ -73,6 +73,7 @@ textarea{
 .notification {
   display: none;
   color: black;
+  padding-bottom: 15px;
 }
 
 .show {
