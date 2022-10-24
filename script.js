@@ -1,6 +1,6 @@
 $(document).ready(function () {
   //listen for save button clicks
-  $('saveBtn').on('click', function () {
+  $('.saveBtn').on('click', function () {
     var value = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
     //save to local storage
@@ -18,25 +18,25 @@ $(document).ready(function () {
   //call to track the current date and time
   function hourUpdater() {
     var currentHour = moment().hours();
+
     $('.time-block').each(function () {
       var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
       if (blockHour < currentHour) {
         $(this).addClass('past');
-      }
-      else if (blockHour === currentHour) {
+      } else if (blockHour === currentHour) {
         $(this).removeClass('past');
         $(this).addClass('present');
-      }
-      else {
-        $(this).removeClass('present');
+      } else {
         $(this).removeClass('past');
+        $(this).removeClass('present');
         $(this).addClass('future');
       }
     });
   }
 
   hourUpdater();
+
   //interval every 15 seconds to check to see if current time needs to be updated 
   var interval = setInterval(hourUpdater, 15000);
 
