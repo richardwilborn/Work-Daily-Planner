@@ -6,9 +6,28 @@ $(document).ready(function () {
     localStorage.setItem(time, value);
   });
 
+  //call to track the current date and time
   function hourUpdater() {
     var currentHour = moment().hours();
+    $('time-block').each(function() {
+      var blockHour = parseInt($(this).attr('id').split('hour')[1]);
 
+      if (blockHour > currentHour) {
+        $(this).addClass('past');
+        $(this).removeClass('future');
+        $(this).removeClass('present');
+      }
+      else if (blockHour === currentHour) {
+        $(this).removeClass('past');
+        $(this).addClass('present');
+        $(this).removeClass('future');
+      }
+      else {
+        $(this).removeClass('present');
+        $(this).removeClass('past');
+        $(this).addClass('future');
+      }
+    })
   }
 
   hourUpdater();
