@@ -12,6 +12,9 @@ $(document).ready(function () {
   }
 
   hourUpdater();
+  //interval every 10 seconds to check to see if current time needs to be updated 
+  var interval = setInterval(hourUpdater, 10000);
+
 
 //current day is displayed at the top of the calendar
   $('#currentDay').text(moment().format('dddd, MMMM Do'));
