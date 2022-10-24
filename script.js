@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  //listen for save button clicks
   $('saveBtn').on('click', function () {
     var value = $(this).siblings('.description').val();
     var time =(this).parent().attr('id');
@@ -16,24 +17,21 @@ $(document).ready(function () {
   function hourUpdater() {
     var currentHour = moment().hours();
     $('time-block').each(function() {
-      var blockHour = parseInt($(this).attr('id').split('hour')[1]);
+      var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
-      if (blockHour > currentHour) {
+      if (blockHour < currentHour) {
         $(this).addClass('past');
-        $(this).removeClass('future');
-        $(this).removeClass('present');
       }
       else if (blockHour === currentHour) {
         $(this).removeClass('past');
         $(this).addClass('present');
-        $(this).removeClass('future');
       }
       else {
         $(this).removeClass('present');
         $(this).removeClass('past');
         $(this).addClass('future');
       }
-    })
+    });
   }
 
   hourUpdater();
