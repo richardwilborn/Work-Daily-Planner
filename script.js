@@ -2,15 +2,17 @@ $(document).ready(function () {
   //listen for save button clicks
   $('saveBtn').on('click', function () {
     var value = $(this).siblings('.description').val();
-    var time =(this).parent().attr('id');
+    var time = $(this).parent().attr('id');
     //save to local storage
     localStorage.setItem(time, value);
+
     //'show' notification that an item was saved to local storage
     $('.notification').addClass('show');
 
-    //removes 'show' after 3 seconds
+    //removes 'show' after 5 seconds
     setTimeout(function () {
-      $('.notification').removeClass('show');}, 3000);
+      $('.notification').removeClass('show');
+    }, 5000);
   });
 
   //call to track the current date and time
