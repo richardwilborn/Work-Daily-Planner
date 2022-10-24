@@ -18,7 +18,7 @@ $(document).ready(function () {
   //call to track the current date and time
   function hourUpdater() {
     var currentHour = moment().hours();
-    $('.time-block').each(function() {
+    $('.time-block').each(function () {
       var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
       if (blockHour < currentHour) {
@@ -37,8 +37,8 @@ $(document).ready(function () {
   }
 
   hourUpdater();
-  //interval every 10 seconds to check to see if current time needs to be updated 
-  var interval = setInterval(hourUpdater, 10000);
+  //interval every 15 seconds to check to see if current time needs to be updated 
+  var interval = setInterval(hourUpdater, 15000);
 
   //load saved data from localStorage into each hour in HTML
   $('#hour-6 .description').val(localStorage.getItem('hour-6'));
