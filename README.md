@@ -10,7 +10,7 @@ https://richardwilborn.github.io/Work-Daily-Planner/
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot of Workday Planner](https://user-images.githubusercontent.com/45742979/197602069-f21335e3-867e-4462-b4f9-26651c8ab996.png)
 
 
 ## License
